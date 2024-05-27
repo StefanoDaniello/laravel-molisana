@@ -9,10 +9,18 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $products = Product::all();
+    public function index(Request $request)
+    {   
+        // dd($request->query());
+        if(!empty($request->query('search'))){
+            $type = $request->query('search');
+            $products = Product::where('type', $type)->get();
+        }else{
+            $products = Product::all();
+        }
+        // $products = Product::all();
         return view('products.index', compact('products'));
+
     }
 
     /**
@@ -54,7 +62,7 @@ class ProductController extends Controller
 
         $new_product = Product::create($form_data);
 
-        
+
         return redirect()->route('products.index');
         // return redirect()->route('products.show', $new_product->id);
     }

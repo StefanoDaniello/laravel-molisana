@@ -3,7 +3,17 @@
 
 @section('content')
   <section class="container mt-4" id="products">
-
+    <form action="{{route('products.index')}}" method="GET" id="search-form">
+      <select name="search" id="search" class="form-control" required>
+        <option value="all">Seleziona</option>
+        <option value="">Tutti</option>
+        <option value="corta">Corte</option>
+        <option value="cortissima">Cortissime</option>
+        <option value="lunga">Lunghe</option>
+        
+      </select>
+      <!-- <button type="submit" class="btn btn-primary mt-3">Cerca</button> -->
+    </form>
     <h1 class="text-center">Prodotti</h1>
     <div class="row">
         @foreach ($products as $product)
