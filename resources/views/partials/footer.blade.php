@@ -1,5 +1,10 @@
+
 <footer class="bg-white mt-5 pt-5">
     <div class="container">
+        @foreach ($mydata as $data)
+            <span>{{$data['key1']}}</span>
+            <span>{{$data['key2']}}</span>
+        @endforeach
         <div class="row">
             <div class="col">
                 <div id="logo" class="">

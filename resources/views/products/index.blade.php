@@ -15,8 +15,6 @@
                   <p class="card-text">{{Str::limit($product->description,80)}}</p>
                   <a href="{{route('products.show', $product->id)}}" class="btn btn-primary">Scopri!</a>
                   <a href="{{route('products.edit', $product->id )}}" class="btn btn-primary ms-3">Modifica</a>
-
-
                 </div>
               </div>
         </div>

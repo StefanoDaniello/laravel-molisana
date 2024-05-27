@@ -29,6 +29,34 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //salvataggio sul database e ridirezione dell' utente
+        $form_data = $request->all();
+        // dd($form_data);
+
+
+
+        // $new_product = new Product();
+        // inserendo nel model il fillable in Products.php basta mettere il metodo fill
+        // per inserire i valori
+        // $new_product->fill($form_data);
+        // $new_product->save();
+
+
+        // $new_product = new Product();
+        // $new_product->title = $form_data['title'];
+        // $new_product->description = $form_data['description'];
+        // $new_product->image = $form_data['image'];
+        // $new_product->weight = $form_data['weight'];
+        // $new_product->cooking_time = $form_data['cooking_time'];
+        // $new_product->type = $form_data['type'];
+        // $new_product->save();
+
+
+
+        $new_product = Product::create($form_data);
+
+        
+        return redirect()->route('products.index');
+        // return redirect()->route('products.show', $new_product->id);
     }
 
     /**
