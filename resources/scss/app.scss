@@ -9,3 +9,24 @@ $fa-font-path: "../webfonts" !default;
 
 @import '~bootstrap/scss/bootstrap';
 
+h1{
+    color: $text-color;
+}
+main{
+    background-image: url('../img/backpage.jpg');
+}
+header {
+    .navbar-nav .nav-link.active {
+        font-weight: bold;
+        color: $text-color;
+    }
+}
+footer{
+    background-image: url('../img/footer-montagne-bottom.jpg');
+    background-repeat: no-repeat;
+}
+#products {
+    .card-img-top {
+        aspect-ratio: 1 / 1.2;
+    }
+}
